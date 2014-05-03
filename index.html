@@ -114,7 +114,7 @@ bundle exec jekyll serve
   <h1 id="usage" class="page-header">Usage</h1>
 
   <h2 id="pages">Pages</h2>
-  <p>The main page is the <code>index.html</code> file. You can also add additional pages by creating additional subdirectories containing a <code>index.html</code> file. Each page file must begins with a template declaration:</p>
+  <p>The main page is the <code>index.html</code> file. You can also add additional pages by creating <code>.html</code> in the root folder. Each page file must begins with a template declaration:</p>
 
 {% highlight html %}
 ---
@@ -159,11 +159,11 @@ alert('Some javascript');
 {% endhighlight %}
 
   <h2 id="resources">Resources & links</h2>
-  <p>If you need to create internal links between your pages, or include resources (JS & CSS), always start your URLs with <code>{{ "{{site.basedir " }}}}</code>.</p>
+  <p>If you need to create internal links between your pages, or include resources (JS & CSS), always start your URLs with <code>{{ "{{site.basedir" }}}}</code>.</p>
 
 {% highlight html %}
-<script src="{{ "{{site.basedir " }}}}/dist/my-script.js"></script>
+<script src="{{ "{{site.basedir" }}}}/dist/my-script.js"></script>
 
-<a href="{{ "{{site.basedir " }}}}/about/index.html">About</a>
+<a href="{{ "{{site.basedir" }}}}/about/index.html">About</a>
 {% endhighlight %}
 </section>

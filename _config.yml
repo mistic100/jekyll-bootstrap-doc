@@ -1,8 +1,7 @@
 # base url used to resolved all internal links with pages and resources
 # set it empty when testing on local
 # set it to https://user.github.io/project before publishing
-# don't remove the &baseurl YAML reference
-baseurl: &baseurl http://mistic100.github.io/jekyll-bootstrap-doc
+baseurl: http://mistic100.github.io/jekyll-bootstrap-doc
 
 # name of the software
 name: Jekyll Bootstrap Doc
@@ -35,7 +34,7 @@ githubButton:
 twitterAccount: mistic100
 
 # url for tweet button
-shareUrl: *baseurl
+shareUrl: http://mistic100.github.io/jekyll-bootstrap-doc
 
 # google analytics
 analytics:
