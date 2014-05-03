@@ -35,13 +35,17 @@
         <a class="navbar-brand" href="{{site.baseurl}}">{{site.name}}</a>
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      {% if site.pages.size > 1 %}
         <ul class="nav navbar-nav">
         {% for p in site.pages %}
+          {% if p.isHome != true %}
           <li {% if page.title == p.title %}class="active"{% endif %}>
             <a href="{{site.baseurl}}{{p.url}}">{{p.title}}</a>
           </li>
+          {% endif %}
         {% endfor %}
         </ul>
+      {% endif %}
         <ul class="nav navbar-nav navbar-right">
         {% for p in site.headerLinks %}
           <li>
