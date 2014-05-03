@@ -1,0 +1,50 @@
+# base url used to resolved all internal links with pages and resources
+# set it empty when testing on local
+# set it to https://user.github.io/project before publishing
+# don't remove the &baseurl YAML reference
+baseurl: &baseurl http://mistic100.github.io/jekyll-bootstrap-doc
+
+# name of the software
+name: Jekyll Bootstrap Doc
+# current version of the software
+version: 1.0.0
+# url of the download button
+downloadUrl: https://github.com/mistic100/jekyll-bootstrap-doc
+# licence of the software
+license: MIT License
+licenseUrl: http://opensource.org/licenses/MIT
+
+# list of additional links on the right of the top menu
+headerLinks:
+  - title: GitHub
+    url: https://github.com/mistic100/jekyll-bootstrap-doc
+
+# list if additional links on the footer
+footerLinks:
+  - title: GitHub
+    url: https://github.com/mistic100/jekyll-bootstrap-doc
+  - title: Issues
+    url: https://github.com/mistic100/jekyll-bootstrap-doc/issues?state=open
+
+# github button
+githubButton:
+  user: mistic100
+  repo: jekyll-bootstrap-doc
+
+# twitter follow button
+twitterAccount: mistic100
+
+# url for tweet button
+shareUrl: *baseurl
+
+# google analytics
+analytics:
+  account:
+  domain:
+
+
+# DON'T MODIFY
+pygments: true
+highlight: pygments
+
+exclude: ['README.md', 'Gemfile.lock', 'Gemfile']
