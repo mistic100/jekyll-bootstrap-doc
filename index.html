@@ -63,16 +63,8 @@ bundle exec jekyll serve
       </thead>
       <tbody>
         <tr>
-          <td>baseurl</td>
-          <td><span class="label label-danger">important</span> Base url of the page. Set it empty when testing on local and set it to <code>https://user.github.io/project</code> before publising</td>
-        </tr>
-        <tr>
           <td>name</td>
           <td>Name of the project.</td>
-        </tr>
-        <tr>
-          <td>description</td>
-          <td>Description of the project (used on homepage)</td>
         </tr>
         <tr>
           <td>version</td>
@@ -80,7 +72,7 @@ bundle exec jekyll serve
         </tr>
         <tr>
           <td>downloadUrl</td>
-          <td>URL of teh download button</td>
+          <td>URL of the download button</td>
         </tr>
         <tr>
           <td>license</td>
@@ -99,6 +91,10 @@ bundle exec jekyll serve
           <td>List of links to display on the bottom of the page. Each item must contain <code>title</code> and <code>url</code> keys</td>
         </tr>
         <tr>
+          <td>header</td>
+          <td>Configuration of the header, two colors gradient and boolean to activate or deactivate <a href="http://qrohlf.com/trianglify/">Trianglify</a> generator</td>
+        </tr>
+        <tr>
           <td>githubButton</td>
           <td>Data used to generate <a href="http://ghbtns.com/">GitHub Buttons</a>. Provide <code>user</code> and <code>repo</code></td>
         </tr>
@@ -108,7 +104,7 @@ bundle exec jekyll serve
         </tr>
         <tr>
           <td>shareUrl</td>
-          <td>Tweet URL. Leave empty to deactivate the button. Default is <code>baseurl</code> value</td>
+          <td>Tweet URL. Leave empty to deactivate the button</td>
         </tr>
         <tr>
           <td>analytics</td>
@@ -167,12 +163,12 @@ alert('Some javascript');
 {{ "{% endhighlight " }}%}
 {% endhighlight %}
 
-  <h2 id="resources">Resources & links</h2>
-  <p>If you need to create internal links between your pages, or include resources (JS & CSS), always start your URLs with <code>{{ "{{site.basedir" }}}}</code>.</p>
+  <h2 id="resources">Resources &amp; links</h2>
+  <p>If you need to create internal links between your pages, or include resources (JS &amp; CSS), always start your URLs with <code>{{ "{{site.github.url" }}}}</code>.</p>
 
 {% highlight html %}
-<script src="{{ "{{site.basedir" }}}}/dist/my-script.js"></script>
+<script src="{{ "{{site.github.url" }}}}/dist/my-script.js"></script>
 
-<a href="{{ "{{site.basedir" }}}}/about/index.html">About</a>
+<a href="{{ "{{site.github.url" }}}}/about/index.html">About</a>
 {% endhighlight %}
 </section>
