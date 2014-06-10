@@ -22,7 +22,7 @@ isHome: true
     <li>Automatic menu</li>
     <li>Configurable additional links</li>
     <li>Github counters</li>
-    <li>Twitter button</li>
+    <li>Twitter &amp; Facebook buttons</li>
   </ul>
   
   <h3 id="examples">Examples</h3>
@@ -95,20 +95,50 @@ bundle exec jekyll serve
           <td>Configuration of the header, two colors gradient and boolean to activate or deactivate <a href="http://qrohlf.com/trianglify/">Trianglify</a> generator</td>
         </tr>
         <tr>
+          <td>analytics</td>
+          <td>Google analytics identifiers. Provide <code>account</code> and <code>domain</code> or leave empty to deactivate</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>Social buttons</h4>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th style="width: 130px;">Name</th>
+          <th>description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
           <td>githubButton</td>
           <td>Data used to generate <a href="http://ghbtns.com/">GitHub Buttons</a>. Provide <code>user</code> and <code>repo</code></td>
         </tr>
         <tr>
-          <td>twitterAccount</td>
-          <td>Your Twitter account. Leave empty to deactivate "Follow" button</td>
+          <td>twitter.enabled</td>
+          <td>Enable or disable Twitter "Tweet" button</td>
         </tr>
         <tr>
-          <td>shareUrl</td>
-          <td>Tweet URL. Leave empty to deactivate the button</td>
+          <td>twitter.via</td>
+          <td>Account linked to "Tweet" button</td>
         </tr>
         <tr>
-          <td>analytics</td>
-          <td>Google analytics identifiers. Provide <code>account</code> and <code>domain</code> or leave empty to deactivate</td>
+          <td>twitter.hash</td>
+          <td>Default hashtags for the "Tweet" button</td>
+        </tr>
+        <tr>
+          <td>twitter.account</td>
+          <td>Account for Twitter "Follow" button. Leave empty to deactivate</td>
+        </tr>
+        <tr>
+          <td>facebook.enabled</td>
+          <td>Enable or disable Facebook "Like" &amp; "Share" buttons</td>
+        </tr>
+        <tr>
+          <td>facebook.profileUrl</td>
+          <td>Profile for Facebook "Follow" button. Leave empty to deactivate</td>
         </tr>
       </tbody>
     </table>

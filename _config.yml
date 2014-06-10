@@ -26,16 +26,22 @@ header:
   color2: "#673051"
   trianglify: true
 
-# github button
+# github buttons
 githubButton:
   user: mistic100
   repo: jekyll-bootstrap-doc
 
-# twitter follow button
-twitterAccount: mistic100
+# twitter buttons
+twitter:
+  enabled: true
+  via:
+  hash:
+  account:
 
-# url for tweet button
-shareUrl: http://mistic100.github.io/jekyll-bootstrap-doc
+# facebook buttons
+facebook:
+  enabled: true
+  profileUrl:
 
 # google analytics
 analytics:
