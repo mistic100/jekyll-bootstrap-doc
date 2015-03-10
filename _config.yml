@@ -1,7 +1,7 @@
 # name of the software
 name: Jekyll Bootstrap Doc
 # current version of the software
-version: 1.0.1
+version: 1.1.0
 # url of the download button
 downloadUrl: https://github.com/mistic100/jekyll-bootstrap-doc
 # licence of the software
@@ -26,6 +26,11 @@ header:
   color2: "#673051"
   trianglify: true
 
+# google analytics
+analytics:
+  account:
+  domain:
+
 # github buttons
 githubButton:
   user: mistic100
@@ -43,14 +48,11 @@ facebook:
   enabled: true
   profileUrl:
 
-# google analytics
-analytics:
-  account:
-  domain:
 
+exclude: ['README.md', 'LICENSE', 'bower.json', 'Gemfile.lock', 'Gemfile']
 
-# DON'T MODIFY
-pygments: true
-highlight: pygments
-
-exclude: ['README.md', 'Gemfile.lock', 'Gemfile']
+gems:
+  - jekyll-mentions
+  - jemoji
+  - jekyll-redirect-from
+  - jekyll-sitemap

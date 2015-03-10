@@ -5,7 +5,6 @@ description: Simple documentation template for Github pages
 isHome: true
 ---
 
-<!-- intro -->
 <section class="bs-docs-section">
   <h1 id="overview" class="page-header">Overview</h1>
   
@@ -39,18 +38,18 @@ isHome: true
 <section class="bs-docs-section">
   <h1 id="installation" class="page-header">Installation</h1>
 
-  <h3 id="install-jekyll">Install Jekyll</h3>
+  <h2 id="install-jekyll">Install Jekyll</h2>
   <p>Follow the <a href="https://help.github.com/articles/using-jekyll-with-pages">GitHub guide</a> to install Jekyll on your computer. The big steps are:</p>
 
 {% highlight text %}
 apt-get install ruby ruby-dev
 gem install bundler
-git clone git@github.com:mistic100/jekyll-bootstrap-doc
+git clone git://github.com/mistic100/jekyll-bootstrap-doc
 bundle install
 bundle exec jekyll serve
 {% endhighlight %}
 
-  <h3 id="configuration">Configuration</h3>
+  <h2 id="configuration">Configuration</h2>
   <p>Adapt the <code>_config.yml</code> file to your project.</p>
 
   <div class="table-responsive">
@@ -102,7 +101,7 @@ bundle exec jekyll serve
     </table>
   </div>
 
-  <h4>Social buttons</h4>
+  <h3>Social buttons</h3>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead>
@@ -144,6 +143,7 @@ bundle exec jekyll serve
     </table>
   </div>
 </section>
+
 
 <section class="bs-docs-section">
   <h1 id="usage" class="page-header">Usage</h1>
@@ -201,4 +201,10 @@ alert('Some javascript');
 
 <a href="{{ "{{site.github.url" }}}}/about/index.html">About</a>
 {% endhighlight %}
+
+  <h2 id="gems">Plugins</h2>
+  <p>All available Jekyll plugins are installed by default, you can remove them by modifying the <code>gems</code> parameter in <code>_config.yml</code>. See the documentation on <a href="https://help.github.com/articles/using-jekyll-plugins-with-github-pages/">GitHub Help</a> pages.</p>
+
+  <h2 id="bower">Bower</h2>
+  <p>Fell free to use the <code>bower.json</code> to manage your front dependencies. Bower packages are added the <code>dist</code> directory and <b>MUST</b> be pushed to the repository. jQuery and Bootstrap are ignored by <code>.gitignore</code> as already loaded from a CDN.</p>
 </section>
