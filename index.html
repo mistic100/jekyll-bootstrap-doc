@@ -149,20 +149,35 @@ bundle exec jekyll serve
   <h1 id="usage" class="page-header">Usage</h1>
 
   <h2 id="pages">Pages</h2>
-  <p>The main page is the <code>index.html</code> file. You can also add additional pages by creating <code>.html</code> in the root folder. Each page file must begins with a template declaration:</p>
+  <p>The main page is the <code>index.html</code> file. You can also add additional pages by creating <code>.html</code> files in the root folder or in any sub-folder. Each page file must begins with a template declaration:</p>
 
 {% highlight html %}
 ---
 layout: default
 title: Home
 description: Simple documentation template for Github pages
-isHome: true
 ---
 
 <!-- content -->
 {% endhighlight %}
 
-  <p><b>Don't change the <code>layout</code> value.</b> Set <code>isHome</code> to <code>true</code> on the main page file, the homepage will have a bigger header with a central download button.</p>
+  <p>Set <code>isHome</code> to <code>true</code> on the main page file, the homepage will have a bigger header with a central download button.</p>
+  
+{% highlight html %}
+---
+..........
+isHome: true
+---
+{% endhighlight %}
+
+  <p>Set <code>hide</code> to <code>true</code> to hide a page from the main menu, the page will still be accessible with direct link. <a href="hidden.html">Example</a>.</p>
+  
+{% highlight html %}
+---
+..........
+hide: true
+---
+{% endhighlight %}
 
   <h2 id="titles">Titles</h2>
   <p>In order to get the right menu automatically generated you must respect some conventions.</p>
@@ -170,7 +185,7 @@ isHome: true
 {% highlight html %}
 <!-- wrap each main section with "bs-docs-section" class -->
 <section class="bs-docs-section">
-  <!-- each section must contain ONE h1 with an id and "page-header" class -->
+  <!-- each section must contain ONE h1 with an id and optionally a "page-header" class -->
   <h1 id="first-level" class="page-header">First level</h1>
 
   <!-- you can optionally declare sub-sections with h2/h3 with an id -->
@@ -200,6 +215,17 @@ alert('Some javascript');
 <script src="{{ "{{site.github.url" }}}}/dist/my-script.js"></script>
 
 <a href="{{ "{{site.github.url" }}}}/about/index.html">About</a>
+{% endhighlight %}
+
+  <h2 id="bootbox">Bootbox</h2>
+  <p><a href="http://bootboxjs.com/">Bootbox</a> is installed with a syntax sugar to easily create pop-in content. To use this sugar you must create a clickable element with a <code>data-bootbox</code> attribute and an hidden content holder with a corresponding <code>id</code> attribute.</p>
+
+{% highlight html %}
+<button class="btn btn-primary btn-xs" data-bootbox="my-content">Button title</button>
+
+<div id="my-content" class="hidden" title="Pop-in title">
+  Pop-in content
+</div>
 {% endhighlight %}
 
   <h2 id="gems">Plugins</h2>

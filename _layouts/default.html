@@ -24,6 +24,7 @@
 
   <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="https://netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.3.0/bootbox.min.js"></script>
   <script src="{{site.github.url}}/assets/js/docs.min.js"></script>
 </head>
 
@@ -45,7 +46,7 @@
         <ul class="nav navbar-nav">
         {% assign sorted_pages = site.pages | sort:"name" %}
         {% for p in sorted_pages %}
-          {% if p.isHome != true and p.hide != true and p.title != blank %}
+          {% if p.isHome != true and p.hide != true and p.title !=  %}
           <li {% if page.title == p.title %}class="active"{% endif %}>
             <a href="{{site.github.url}}{{p.url}}">{{p.title}}</a>
           </li>
