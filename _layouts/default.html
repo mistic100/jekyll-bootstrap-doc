@@ -6,6 +6,10 @@
 
   <title>{{site.name}}</title>
 
+  {% if site.favicon %}
+  <link rel="icon" type="{% if site.favicon == 'png' %}image/png{% else %}image/x-icon{% endif %}" href="{{site.github.url}}/favicon.{{site.favicon}}"/>
+  {% endif %}
+
   <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
@@ -44,21 +48,25 @@
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav">
-        {% assign sorted_pages = site.pages | sort:"name" %}
-        {% for p in sorted_pages %}
-          {% if p.isHome != true and p.hide != true and p.title !=  %}
-          <li {% if page.title == p.title %}class="active"{% endif %}>
-            <a href="{{site.github.url}}{{p.url}}">{{p.title}}</a>
-          </li>
-          {% endif %}
-        {% endfor %}
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-        {% for p in site.headerLinks %}
-          <li>
-            <a href="{{p.url}}">{{p.title}}</a>
-          </li>
-        {% endfor %}
+        {% if site.customNavBar %}
+          {% include navbar.html %}
+        {% else %}
+          {% assign sorted_pages = site.pages | sort:"name" %}
+          {% for p in sorted_pages %}
+            {% if p.isHome != true and p.hide != true and p.title != '' %}
+            <li {% if page.title == p.title %}class="active"{% endif %}>
+              <a href="{{site.github.url}}{{p.url}}">{{p.title}}</a>
+            </li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+          {% for p in site.headerLinks %}
+            <li>
+              <a href="{{p.url}}">{{p.title}}</a>
+            </li>
+          {% endfor %}
+        {% endif %}
         </ul>
       </nav>
     </div>
@@ -73,11 +81,21 @@
       <h1 class="home-title">{{site.name}}</h1>
       <p class="lead">{{page.description}}</p>
       <p class="lead">
-        <a href="{{site.downloadUrl}}" class="btn btn-outline-inverse btn-lg">Download</a>
+        {% if site.download.popup %}
+        <a data-bootbox="download-popup" data-bootbox-size="large" class="btn btn-outline-inverse btn-lg">Download</a>
+        {% else %}
+        <a href="{{site.download.url}}" class="btn btn-outline-inverse btn-lg">Download</a>
+        {% endif %}
       </p>
       <p class="version">Currently v{{site.version}}</p>
     </div>
   </div>
+
+  {% if site.download.popup %}
+  <div id="download-popup" title="Download {{site.name}} {{site.version}}" class="hidden">
+    {% include download-popup.html %}
+  </div>
+  {% endif %}
 
   {% else %}
   <div class="bs-docs-header" id="content">

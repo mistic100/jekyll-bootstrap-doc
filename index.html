@@ -7,9 +7,10 @@ isHome: true
 
 <section class="bs-docs-section">
   <h1 id="overview" class="page-header">Overview</h1>
-  
+
   <blockquote>
-    This is a Jekyll template I use for my GitHub projects documentations. It is heavily based on official Bootstrap documentation and is designed to be quickly deployed.
+    This is a Jekyll template I use for my GitHub projects documentations. It is heavily based on official Bootstrap
+    documentation and is designed to be quickly deployed.
   </blockquote>
 
   <h3 id="features">Features</h3>
@@ -22,15 +23,16 @@ isHome: true
     <li>Configurable additional links</li>
     <li>Github counters</li>
     <li>Twitter &amp; Facebook buttons</li>
+    <li>Download options popup</li>
   </ul>
-  
+
   <h3 id="examples">Examples</h3>
-  
+
   <ul>
-    <li><a href="http://mistic100.github.io/jQuery-highlightTextarea/">jQuery highlightTextarea</a></li>
+    <li><a href="http://photo-sphere-viewer.js.org">Photo Sphere Viewer</a></li>
+    <li><a href="http://querybuilder.js.org">jQuery QueryBuilder</a></li>
+    <li><a href="http://bootstrap-confirmation.js.org">Bootstrap Confirmation</a></li>
     <li><a href="http://mistic100.github.io/angular-smilies">AngularJS Smilies</a></li>
-    <li><a href="http://mistic100.github.io/jQuery-QueryBuilder">jQuery QueryBuilder</a></li>
-    <li><a href="http://mistic100.github.io/Bootstrap-Confirmation/">Bootstrap Confirmation</a></li>
   </ul>
 </section>
 
@@ -39,15 +41,20 @@ isHome: true
   <h1 id="installation" class="page-header">Installation</h1>
 
   <h2 id="install-jekyll">Install Jekyll</h2>
-  <p>Follow the <a href="https://help.github.com/articles/using-jekyll-with-pages">GitHub guide</a> to install Jekyll on your computer. The big steps are:</p>
+  <p>
+    Follow the <a href="https://help.github.com/articles/using-jekyll-with-pages">GitHub guide</a> to install Jekyll
+    on your computer. The big steps are:
+  </p>
 
-{% highlight text %}
-apt-get install ruby ruby-dev
-gem install bundler
-git clone git://github.com/mistic100/jekyll-bootstrap-doc
-bundle install
-bundle exec jekyll serve
+<!-- @formatter:off -->
+{% highlight bash %}
+$ apt-get install ruby ruby-dev
+$ gem install bundler
+$ git clone git://github.com/mistic100/jekyll-bootstrap-doc
+$ bundle install
+$ bundle exec jekyll serve
 {% endhighlight %}
+<!-- @formatter:on -->
 
   <h2 id="configuration">Configuration</h2>
   <p>Adapt the <code>_config.yml</code> file to your project.</p>
@@ -70,10 +77,6 @@ bundle exec jekyll serve
           <td>Current version of the project</td>
         </tr>
         <tr>
-          <td>downloadUrl</td>
-          <td>URL of the download button</td>
-        </tr>
-        <tr>
           <td>license</td>
           <td>License of the project</td>
         </tr>
@@ -82,20 +85,40 @@ bundle exec jekyll serve
           <td>URL of the license text</td>
         </tr>
         <tr>
+          <td>favicon</td>
+          <td>Extension of the favicon</td>
+        </tr>
+        <tr>
+          <td>download</td>
+          <td>Configuration of the download button (see comment in the file)</td>
+        </tr>
+        <tr>
           <td>headerLinks</td>
-          <td>List of links to display on the right of the top menu. Each item must contain <code>title</code> and <code>url</code> keys</td>
+          <td>
+            List of links to display on the right of the top menu. Each item must contain
+            <code>title</code> and <code>url</code> keys
+          </td>
         </tr>
         <tr>
           <td>footerLinks</td>
-          <td>List of links to display on the bottom of the page. Each item must contain <code>title</code> and <code>url</code> keys</td>
+          <td>
+            List of links to display on the bottom of the page. Each item must contain
+            <code>title</code> and <code>url</code> keys
+          </td>
         </tr>
         <tr>
           <td>header</td>
-          <td>Configuration of the header, two colors gradient and boolean to activate or deactivate <a href="http://qrohlf.com/trianglify/">Trianglify</a> generator</td>
+          <td>
+            Configuration of the header, two colors gradient and boolean to activate or deactivate
+            <a href="http://qrohlf.com/trianglify/">Trianglify</a> generator
+          </td>
         </tr>
         <tr>
           <td>analytics</td>
-          <td>Google analytics identifiers. Provide <code>account</code> and <code>domain</code> or leave empty to deactivate</td>
+          <td>
+            Google analytics identifiers. Provide <code>account</code> and <code>domain</code> or leave empty to
+            deactivate
+          </td>
         </tr>
       </tbody>
     </table>
@@ -113,7 +136,10 @@ bundle exec jekyll serve
       <tbody>
         <tr>
           <td>githubButton</td>
-          <td>Data used to generate <a href="http://ghbtns.com/">GitHub Buttons</a>. Provide <code>user</code> and <code>repo</code></td>
+          <td>
+            Data used to generate <a href="http://ghbtns.com/">GitHub Buttons</a>.
+            Provide <code>user</code> and <code>repo</code>
+          </td>
         </tr>
         <tr>
           <td>twitter.enabled</td>
@@ -149,8 +175,12 @@ bundle exec jekyll serve
   <h1 id="usage" class="page-header">Usage</h1>
 
   <h2 id="pages">Pages</h2>
-  <p>The main page is the <code>index.html</code> file. You can also add additional pages by creating <code>.html</code> files in the root folder or in any sub-folder. Each page file must begins with a template declaration:</p>
+  <p>
+    The main page is the <code>index.html</code> file. You can also add additional pages by creating <code>.html</code>
+    files in the root folder or in any sub-folder. Each page file must begins with a template declaration:
+  </p>
 
+<!-- @formatter:off -->
 {% highlight html %}
 ---
 layout: default
@@ -160,28 +190,40 @@ description: Simple documentation template for Github pages
 
 <!-- content -->
 {% endhighlight %}
+<!-- @formatter:on -->
 
-  <p>Set <code>isHome</code> to <code>true</code> on the main page file, the homepage will have a bigger header with a central download button.</p>
-  
+  <p>
+    Set <code>isHome</code> to <code>true</code> on the main page file, the homepage will have a bigger header with a
+    central download button.
+  </p>
+
+<!-- @formatter:off -->
 {% highlight html %}
 ---
 ..........
 isHome: true
 ---
 {% endhighlight %}
+<!-- @formatter:on -->
 
-  <p>Set <code>hide</code> to <code>true</code> to hide a page from the main menu, the page will still be accessible with direct link. <a href="hidden.html">Example</a>.</p>
-  
+  <p>
+    Set <code>hide</code> to <code>true</code> to hide a page from the main menu, the page will still be accessible
+    with direct link. <a href="hidden.html">Example</a>.
+  </p>
+
+<!-- @formatter:off -->
 {% highlight html %}
 ---
 ..........
 hide: true
 ---
 {% endhighlight %}
+<!-- @formatter:on -->
 
   <h2 id="titles">Titles</h2>
   <p>In order to get the right menu automatically generated you must respect some conventions.</p>
 
+<!-- @formatter:off -->
 {% highlight html %}
 <!-- wrap each main section with "bs-docs-section" class -->
 <section class="bs-docs-section">
@@ -194,10 +236,15 @@ hide: true
   <h3 id="another-sub-section">Still second level</h3>
 </section>
 {% endhighlight %}
+<!-- @formatter:on -->
 
   <h2 id="highlight">Syntax highlight</h2>
-  <p>The powerful Pygments highlighter is activated on the template, just wrap your unescaped source code with the <code>{{ "{% highlight ... " }}%}</code> directive.</p>
+  <p>
+    The powerful Pygments highlighter is activated on the template, just wrap your unescaped source code with the
+    <code>{{ "{% highlight ... " }}%}</code> directive.
+  </p>
 
+<!-- @formatter:off -->
 {% highlight text %}
 {{ "{% highlight html " }}%}
 <div>Some <b>HTML</b></div>
@@ -207,19 +254,30 @@ hide: true
 alert('Some javascript');
 {{ "{% endhighlight " }}%}
 {% endhighlight %}
+<!-- @formatter:on -->
 
   <h2 id="resources">Resources &amp; links</h2>
-  <p>If you need to create internal links between your pages, or include resources (JS &amp; CSS), always start your URLs with <code>{{ "{{site.github.url" }}}}</code>.</p>
+  <p>
+    If you need to create internal links between your pages, or include resources (JS &amp; CSS), always start your
+    URLs with <code>{{ "{{site.github.url" }}}}</code>.
+  </p>
 
+  <!-- @formatter:off -->
 {% highlight html %}
 <script src="{{ "{{site.github.url" }}}}/dist/my-script.js"></script>
 
 <a href="{{ "{{site.github.url" }}}}/about/index.html">About</a>
 {% endhighlight %}
+<!-- @formatter:on -->
 
   <h2 id="bootbox">Bootbox</h2>
-  <p><a href="http://bootboxjs.com/">Bootbox</a> is installed with a syntax sugar to easily create pop-in content. To use this sugar you must create a clickable element with a <code>data-bootbox</code> attribute and an hidden content holder with a corresponding <code>id</code> attribute.</p>
+  <p>
+    <a href="http://bootboxjs.com/">Bootbox</a> is installed with a syntax sugar to easily create pop-in content.
+    To use this sugar you must create a clickable element with a <code>data-bootbox</code> attribute and an hidden
+    content holder with a corresponding <code>id</code> attribute.
+  </p>
 
+  <!-- @formatter:off -->
 {% highlight html %}
 <button class="btn btn-primary btn-xs" data-bootbox="my-content">Button title</button>
 
@@ -227,10 +285,20 @@ alert('Some javascript');
   Pop-in content
 </div>
 {% endhighlight %}
+  <!-- @formatter:on -->
 
   <h2 id="gems">Plugins</h2>
-  <p>All available Jekyll plugins are installed by default, you can remove them by modifying the <code>gems</code> parameter in <code>_config.yml</code>. See the documentation on <a href="https://help.github.com/articles/using-jekyll-plugins-with-github-pages/">GitHub Help</a> pages.</p>
+  <p>
+    All available Jekyll plugins are installed by default, you can remove them by modifying the <code>gems</code>
+    parameter in <code>_config.yml</code>. See the documentation on
+    <a href="https://help.github.com/articles/using-jekyll-plugins-with-github-pages/">GitHub Help</a> pages.
+  </p>
 
   <h2 id="bower">Bower</h2>
-  <p>Fell free to use the <code>bower.json</code> to manage your front dependencies. Bower packages are added the <code>dist</code> directory and <b>MUST</b> be pushed to the repository. jQuery and Bootstrap are ignored by <code>.gitignore</code> as already loaded from a CDN.</p>
+  <p>
+    Feel free to use the <code>bower.json</code> to manage your front dependencies. Bower packages are added the
+    <code>dist</code> directory and <b>MUST</b> be pushed to the repository. jQuery and Bootstrap are ignored by
+    <code>.gitignore</code> as already loaded from a CDN.
+  </p>
+
 </section>
