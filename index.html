@@ -20,6 +20,7 @@ isHome: true
     <li>Automatic syntax highlight</li>
     <li>Multi-page</li>
     <li>Automatic menu</li>
+    <li>Automatic heading anchors</li>
     <li>Configurable additional links</li>
     <li>Github counters</li>
     <li>Twitter &amp; Facebook buttons</li>
@@ -124,7 +125,7 @@ $ bundle exec jekyll serve
     </table>
   </div>
 
-  <h3>Social buttons</h3>
+  <h3 id="social-buttons" data-no-menu>Social buttons</h3>
   <div class="table-responsive">
     <table class="table table-bordered table-striped">
       <thead>
@@ -237,6 +238,23 @@ hide: true
 </section>
 {% endhighlight %}
 <!-- @formatter:on -->
+
+  <p>
+    If you want an <code>&lt;h1-3&gt;</code> with an <code>id</code> but not visible in the menu, add a
+    <code>data-no-menu</code> attribute to it.
+  </p>
+
+  <!-- @formatter:off -->
+{% highlight html %}
+<h2 id="my-id" data-no-menu>Title</h2>
+{% endhighlight %}
+<!-- @formatter:on -->
+
+  <h2 id="anchors">Anchors</h2>
+  <p>
+    A paragraph (§) link is added next to every <code>&lt;h1-5&gt;</code> with an <code>id</code> attribute in order
+    to easily right-click and copy the link to a particular section. The link is visible when hovering the title.
+  </p>
 
   <h2 id="highlight">Syntax highlight</h2>
   <p>
